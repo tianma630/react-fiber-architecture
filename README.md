@@ -3,45 +3,6 @@
 # react fiber 架构
 
 ## 介绍
- react fiber 重新实现了 react 的核心算法。他是 react 团队花了超过2年时间研究的成果。
-
- react fiber 的目标是为了更好的适配动画、布局、手势操作等领域。它最大的特征是**渐进式的渲染**：将渲染工作拆分成若干的小模块，并插入到不同的帧中。
-
- 其他的特征包括：当有新的更新时，可以暂停、终止、重复使用工作模块；为不同的更新分配优先级；和并发的能力。
-
- ## 关于文档
- fiber 介绍了几个原则，如果只看代码很难去理解。这个文档是我随着 react 项目实现 fiber 的过程中收集的一些笔记。随着文档的扩充，我渐渐意识到这也许会帮助到其他人。
-
- 我会尝试使用最朴素的语言，尽量避免行业术语。如果有需要我也会直接链接到外部的资源。
-
- 我并不是 react 团队的组员，也不代表任何官方。**这也不是正式的文档**。当然，为了更加的准确，我也邀请了 react 团队的成员来帮忙检查这个文档。
-
- 文档也还在进行当中。**fiber 是一个进行当中的项目，在它完成之前会经历一些大的重构**。我也尝试用文档记录这个过程。很欢迎大家的改进和建议。
-
- 我希望大家读了这篇文档后，足够的理解 fiber ，[跟上它的实现](https://github.com/facebook/react/commits/master/src/renderers/shared/fiber)，最终甚至对 react 有所贡献。
-
- ### 预备知识
- 我强烈建议你在继续之前先熟悉下面的内容：
- - [React Components, Elements, and instances](https://facebook.github.io/react/blog/2015/12/18/react-components-elements-and-instances.html) - 组件常常有多种含义。深刻掌握这几个概念非常重要。
- - [Reconciliation](https://facebook.github.io/react/docs/reconciliation.html) - 对 react 调度算法高层次的描述。
- - [React Basic Theoretical Concepts](https://github.com/reactjs/react-basic) - 描述了 react 概念模型。第一次阅读可能理解不了其中的一些原则。没有关系，随着时间的进行会有更好的理解。
- - [React Design Principles](https://facebook.github.io/react/contributing/design-principles.html) - 特别关注调度的部分。它解释了为什么是 react fiber 。
-
- ## 检查
- 如果还没有的话，请确认下上面的预备知识。
-
- 在深入之前，我们检查下一些原则。
-
- ### 调和算法(reconciliation)是什么
-
-<dl>
-  <dt>调和(reconciliation)</dt>
-  <dd>
-  调和算法是 react 用来区分新、旧两棵树，并找出需要更新的部分。
-  </dd>
-# react fiber 架构
-
-## 介绍
  `react fiber` 重新实现了 `react` 的核心算法。他是 `react` 团队花了超过2年时间研究的成果。
 
  `react fiber` 的目标是为了更好的适配动画、布局、手势操作等领域。它最大的特征是**渐进式的渲染**：将渲染工作拆分成若干的小模块，并插入到不同的帧中。
@@ -76,7 +37,7 @@
 <dl>
   <dt>调和(reconciliation)</dt>
   <dd>
-  调和算法是 react 用来区分新、旧两棵树，并找出需要更新的部分。
+  调和算法是 `react` 用来区分新、旧两棵树，并找出需要更新的部分。
   </dd>
   <dt>更新(update)</dt>
   <dd>
@@ -295,3 +256,4 @@ function matchesPriority(fiber, priority) {
 
 ## 关联适配
 - [What's Next for React (ReactNext 2016)](https://youtu.be/aV1271hd9ew)
+
